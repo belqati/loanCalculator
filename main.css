@@ -3,6 +3,10 @@ body {
   color: #124651;
 }
 
+small {
+  margin-top: 5px;
+}
+
 .btn-dark {
   background-color: #124651;
 }
