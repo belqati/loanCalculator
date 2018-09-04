@@ -23,30 +23,31 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fas fa-dollar-sign"></i></div>
                 </div>
-                <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
+                <input type="number" class="form-control" id="amount" placeholder="Loan Amount" required>
               </div>
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fas fa-percentage"></i></div>
                 </div>
-                <input type="number" class="form-control" id="interest" placeholder="Interest">
+                <input type="number" step=".01" class="form-control" id="interest" placeholder="Interest" required>
               </div>
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <div class="input-group-text"><i class="fas fa-calendar-alt"></i></div>
                 </div>
-                <input type="number" class="form-control" id="years" placeholder="Years to Repay">
+                <input type="number" class="form-control" id="years" placeholder="Years to Repay" required>
               </div>
-              <div class="form-group">
-                <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+              <div class="form-group submitBtn">
+                <input type="submit" value="Calculate*" class="btn btn-dark btn-block">
+                <small class="float-left">*Interest compounded/year.</small>
               </div>
             </div>
           </form>
 
           <!-- LOADER HERE -->
-<!--           <div class="loading">
+          <div id="loading">
             <img src="/img/loading.gif" alt="">
-          </div> -->
+          </div>
 
           <!-- RESULTS -->
           <div id="results" class="pt-3">

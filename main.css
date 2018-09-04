@@ -14,3 +14,7 @@ body {
 .input-group-text, .form-control {
   color: #126A7D;
 }
+
+#loading, #results {
+  display: none;
+}

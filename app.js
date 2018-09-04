@@ -1,9 +1,18 @@
 // Listen for Submit
-document.querySelector('#loan-form').addEventListener('submit', calculateResults);
+document.querySelector('#loan-form').addEventListener('submit', function(e){
+  // hide results
+  document.querySelector('#results').style.display = 'none';
+
+  // show loader
+  document.querySelector('#loading').style.display = 'block';
+
+  setTimeout(calculateResults, 2000);
+
+  e.preventDefault();
+});
 
 // Calculate Results
-function calculateResults(e){
-  console.log('calculating...')
+function calculateResults(){
   // UI variables
   const amountUI = document.getElementById('amount');
   const interestUI = document.getElementById('interest');
@@ -26,15 +35,26 @@ function calculateResults(e){
     monthlyPaymentUI.value = monthly.toFixed(2);
     totalPaymentUI.value = (monthly * calculatedPayments).toFixed(2);
     totalInterestUI.value = ((monthly * calculatedPayments) - principal).toFixed(2);
+
+    // show results
+    document.querySelector('#results').style.display = 'block';
+
+    // hide loader
+    document.querySelector('#loading').style.display = 'none';
+
   } else {
     showError('Oops, please check your numbers!')
   }
-
-  e.preventDefault();
 }
 
 // show error
 function showError(error){
+  // hide results
+  document.querySelector('#results').style.display = 'none';
+
+  // hide loader
+  document.querySelector('#loading').style.display = 'none';
+
   // create div
   const errorDiv = document.createElement('div');
 
