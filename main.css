@@ -1,0 +1,16 @@
+body {
+  background: #124651;
+  color: #124651;
+}
+
+.btn-dark {
+  background-color: #124651;
+}
+
+.btn.btn-dark:hover, .btn.btn-dark:active, .btn.btn-dark:focus {
+  background-color: #126A7D !important;
+}
+
+.input-group-text, .form-control {
+  color: #126A7D;
+}
